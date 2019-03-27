@@ -28,15 +28,31 @@ import android.support.v4.app.NotificationCompat;
 
 public abstract class INotifyParams extends NotifyDefault {
 
+    /**
+     * get default NotificationCompat.Builder
+     * @param context
+     * @param channelId
+     * @return
+     */
     @Override
     protected NotificationCompat.Builder getDefault(Context context, String channelId) {
         return super.getDefault(context, channelId);
     }
 
+    /**
+     * add paramter to builder
+     * @param builder
+     * @return
+     */
     protected NotificationCompat.Builder addAction(NotificationCompat.Builder builder) {
         return builder;
     }
 
+    /**
+     * add paramter to notification
+     * @param builder
+     * @return
+     */
     protected Notification addNotifyAndBuilderParams(NotificationCompat.Builder builder) {
         return builder.build();
     }

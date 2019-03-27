@@ -8,6 +8,8 @@ import rxjava.fengzi.com.notifymanager.R;
 import java.util.List;
 
 /**
+ * ===============================================================================================
+ * 已过时:在android O中
  * Notification标志(flag)介绍
  * <p>
  * Notification.FLAG_SHOW_LIGHTS //三色灯提醒，在使用三色灯提醒时候必须加该标志符
@@ -25,7 +27,7 @@ import java.util.List;
  * public static final int DEFAULT_LIGHTS = 4;使用默认闪光提示
  * public static final int STREAM_DEFAULT = -1;
  * <p>
- * <p>
+ * ===============================================================================================
  * PendingIntent的匹配规则
  * 如果两个PendingIntent内部的Intent相同并且requestCode也相同,那么这两个PendingIntent相同,
  * <p>
@@ -54,9 +56,8 @@ public class NotifyDefault {
     protected NotificationCompat.Builder getDefault(Context context, String channelId) {
         return new NotificationCompat.Builder(context, channelId)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("normalNotifyTitle")
-                .setContentText("normalNotifyContent")
-                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setContentTitle("NotifyTitle")
+                .setContentText("NotifyContent")
                 .setShowWhen(true);
     }
 

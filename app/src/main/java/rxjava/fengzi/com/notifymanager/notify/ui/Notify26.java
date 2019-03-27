@@ -29,7 +29,7 @@ public class Notify26 extends NotifyDefault implements Notify {
 
     private Context context;
 
-    private NotifyChannels channels;
+    private static NotifyChannels channels;
 
     public Notify26(Context context) {
         this.context = context;

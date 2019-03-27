@@ -1,8 +1,11 @@
 package rxjava.fengzi.com.notifymanager.notify.ui;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.support.v4.app.NotificationCompat;
 import rxjava.fengzi.com.notifymanager.R;
+
+import java.util.List;
 
 /**
  * Notification标志(flag)介绍
@@ -25,6 +28,7 @@ import rxjava.fengzi.com.notifymanager.R;
  * <p>
  * PendingIntent的匹配规则
  * 如果两个PendingIntent内部的Intent相同并且requestCode也相同,那么这两个PendingIntent相同,
+ * <p>
  * <p>
  * Intent的匹配规则:
  * 如果两个Intent的ComponentName和intent-filter都相同,那么两个Intent都相同.
@@ -55,4 +59,5 @@ public class NotifyDefault {
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setShowWhen(true);
     }
+
 }

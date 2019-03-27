@@ -101,11 +101,35 @@ import android.widget.RemoteViews;
  */
 public interface Notify {
 
+    /**
+     * 自定义Notification参数和NotificationCompat.Builder参数
+     * @param notifyParams
+     */
+    void sendCustomNotify(INotifyParams notifyParams);
+    /**
+     * 自定义NotificationCompat.Builder参数
+     * @param notifyParams
+     */
+    void sendCustomNotifyBuilder(INotifyParams notifyParams);
 
+    /**
+     * 常规Notification
+     * @param contentAction:内容点击事件
+     */
     void sendNormalNotify(PendingIntent contentAction);
 
+    /**
+     * 常规Notification
+     * @param contentAction:内容点击事件
+     * @param deleteAction:notification删除时触发的事件
+     */
     void sendNormalNotify(PendingIntent contentAction, PendingIntent deleteAction);
 
+    /**
+     *
+     * @param contentAction
+     * @param actions:NotificationCompat.Action事件
+     */
     void sendActionNotify(PendingIntent contentAction, NotificationCompat.Action... actions);
 
     void sendRemoteInputNotify(PendingIntent contentAction, NotificationCompat.Action... actions);

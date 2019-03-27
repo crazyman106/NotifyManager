@@ -1,6 +1,7 @@
 package rxjava.fengzi.com.notifymanager;
 
 import org.junit.Test;
+import rxjava.fengzi.com.notifymanager.notify.ui.Notify26;
 
 import static org.junit.Assert.*;
 

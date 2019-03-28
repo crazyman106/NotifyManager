@@ -29,7 +29,7 @@ public class Notify26 extends NotifyDefault implements Notify {
 
     private Context context;
 
-    private static NotifyChannels channels;
+    private NotifyChannels channels;
 
     public Notify26(Context context) {
         this.context = context;
@@ -134,9 +134,10 @@ public class Notify26 extends NotifyDefault implements Notify {
     }
 
     @Override
-    public void sendMediaStyleNotify(PendingIntent contentAction, android.support.v4.media.app.NotificationCompat.MediaStyle style, NotificationCompat.Action... actions) {
+    public void sendMediaStyleNotify(PendingIntent contentAction, android.support.v4.media.app.NotificationCompat.MediaStyle style,
+                                     NotificationCompat.Action... actions) {
         NotificationCompat.Builder notifyBuilder = getDefault(context, channels.DEFAULT)
-                .setAutoCancel(true)
+                .setAutoCancel(false)
                 .setContentIntent(contentAction)
                 //设置通知不可删除
                 .setOngoing(true)
@@ -146,7 +147,7 @@ public class Notify26 extends NotifyDefault implements Notify {
                 notifyBuilder.addAction(actions[i]);
             }
         }
-        channels.getNotificationManager().notify((int) (SystemClock.uptimeMillis() / 100), notifyBuilder.build());
+        channels.getNotificationManager().notify(1001, notifyBuilder.build());
     }
 
 
@@ -165,7 +166,7 @@ public class Notify26 extends NotifyDefault implements Notify {
                 .setAutoCancel(false)
                 .setContentIntent(contentAction)
                 .setProgress(100, progress, indeterminate);
-        channels.getNotificationManager().notify((int) (SystemClock.uptimeMillis() / 100), notifyBuilder.build());
+        channels.getNotificationManager().notify(1002, notifyBuilder.build());
     }
 
     /**
@@ -189,8 +190,8 @@ public class Notify26 extends NotifyDefault implements Notify {
                 .setContentIntent(contentAction)
                 //设置全屏响应事件;
                 .setFullScreenIntent(contentAction, true)
-                //设置自定义顶部提醒视图
-                .setCustomHeadsUpContentView(remoteViews);
+                .setCustomHeadsUpContentView(remoteViews); //设置悬挂通知的布局
+//                .setCustomContentView(remoteViews);  //设置自定义通知布局
         channels.getNotificationManager().notify((int) (SystemClock.uptimeMillis() / 100), notifyBuilder.build());
     }
 

@@ -20,6 +20,11 @@
         <activity android:name=".ResultActivity"/>
         <activity android:name=".Result1Activity"/>
         <activity android:name=".Result2Activity"/>
+        <!--exported 不允许其他程序访问-->
+        <!--如果两个程序的userid是一样的话，exported=”false“就没有用了-->
+        <!--两个程序都定义了android：sharedUserId=”android.uid.system"，这时候两个程序的userid是一样的，两个程序之间还是可以互相访问的-->
+        <service android:name=".notify.ui.NotifyServer"
+                 android:exported="false"/>
     </application>
 
 </manifest>

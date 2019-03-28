@@ -1,8 +1,5 @@
 # NotifyManager
 notify for all android's version
+支持android O
+各种notification:自定义歌曲播放,大图模式,有回复内容默认,正常模式,进度条模式 headUp(类似电话,闹钟)模式
 
-[参考]: <> (https://material.io/design/platform-guidance/android-notifications.html#)
-[参考]: <> (https://cloud.tencent.com/developer/article/1140491)
-[参考]: <> (https://developer.android.google.cn/reference/android/app/NotificationChannel)
-
-[必须看]: <> (https://github.com/crazyman106/NotifyManager/new/master?readme=1)
